@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit CSV</title>
+    <!-- Other styles and scripts as needed -->
+</head>
+<body>
+    <h1>Edit CSV: <%= filename %></h1>
+
+
+    <!-- <form method="post" action="/search/<%= filename %>">
+        <input type="text" id="searchInput" name="searchInput" placeholder="Search..." />
+        
+         Add the "Search" button inside the search form -->
+        <!-- <button type="submit">Search</button>
+    </form> --> 
+    
+
+
+    <form method="post" action="/save/<%= filename %>">
+        <table>
+            <thead>
+                <tr>
+                    <% headers.forEach((header, index) => { %>
+                        <th>
+                            <input type="text" name="header[<%= index %>]" value="<%= header %>" />
+                        </th>
+                    <% }); %>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <% rows.forEach((row, rowIndex) => { %>
+                    <tr>
+                        <% row.forEach((cell, colIndex) => { %>
+                            <td>
+                                <input type="text" name="rows[<%= rowIndex %>][<%= colIndex %>]" value="<%= cell %>" />
+                            </td>
+                        <% }); %>
+                                <input type="hidden" name="editedRow" value="<%= rowIndex %>" /> <!-- Add this line -->
+                    </tr>
+                <% }); %>
+            </tbody>
+            
+        </table>
+        <button type="submit">Save</button>
+    </form>
+    <a href="/view/<%= filename %>">View</a>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/csvedit.js"></script>
+</body>
+</html>

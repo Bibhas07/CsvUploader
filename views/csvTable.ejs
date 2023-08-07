@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSV Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        a {
+            text-decoration: none;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSV Table: <%= filename %></h1>
+
+    <!-- Add the search box -->
+    <input type="text" id="searchInput" placeholder="Search...">
+    <br>
+    <br>
+    <!-- <label for="selectColumn">Select Column for Chart:</label>
+    <select id="selectColumn">
+        <% headers.forEach((header, index) => { %>
+            <option value="<%= index %>"><%= header %></option>
+        <% }); %>
+    </select> -->
+
+    <table>
+        <thead>
+            <tr>
+                <% headers.forEach(header => { %>
+                    <th><%= header %></th>
+                <% }); %>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <% rows.forEach(row => { %>
+                <tr>
+                    <% row.forEach(cell => { %>
+                        <td><%= cell %></td>
+                    <% }); %>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    
+    
+    <br>
+    <a href="/edit/<%= filename %>">Edit</a>
+    <a href="/">Home</a>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script src="/js/csvchart.js"></script> -->
+      <script src="/js/script.js"></script>
+</body>
+
+</html>

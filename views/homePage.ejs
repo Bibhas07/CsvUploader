@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSV Upload App</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>CSV Uploader</h1>
+        <div class="content">
+            <div class="fileList">
+                <h4>Uploaded CSV Files</h4>
+                <ul>
+                    <% files.forEach(file => { %>
+                        <li>
+                            <%= file %>
+                            <a href="/view/<%= file %>">View</a>
+                            <a href="/edit/<%= file %>">Edit</a>
+                            <a href="/delete/<%= file%>">Delete</a>
+                        </li>
+                    <% }); %>
+                </ul>
+            </div>
+            <hr class="dashedLine">
+            <div class="submitForm">
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <label for="profileImage">Choose CSV</label>
+                    <input type="file" id="profileImage" name="profileImage" onchange="showFileName()">
+                    <span id="selectedFileName">No file chosen</span>
+                    <button type="submit">Upload</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

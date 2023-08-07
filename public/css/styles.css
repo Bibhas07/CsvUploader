@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    
+   
+  }
+  h4{
+    text-align: center;
+  }
+  .container {
+   
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    width: 800px;
+    margin: 50px auto;
+  }
+  /* Add some spacing between each file list item */
+.fileList li {
+    margin-bottom: 10px;
+  }
+  
+  /* Style the links (View, Edit, Delete) in the file list */
+  
+  
+  .fileList a:hover {
+    background-color: #e8edf2;
+  }
+
+  
+
+  h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #007bff;
+    margin-bottom: 30px;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .fileList,
+  .submitForm {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  /* .fileList ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  } */
+  
+  .fileList li {
+    margin-bottom: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #007bff;
+    margin-right: 10px;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .submitForm form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .submitForm input[type="file"] {
+    margin-right: 10px;
+  }
+  
+
+  .submitForm form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .submitForm input[type="file"] {
+    display: none;
+  }
+  
+  .submitForm label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+  }
+  
+  .submitForm label:hover {
+    background-color: #0056b3;
+  } 
+
+  .submitForm #selectedFileName {
+    /* Additional CSS for displaying the selected file name */
+    font-size: 14px;
+    color: #555;
+    margin-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+  }
+  
+  .submitForm button {
+    /* ... (existing CSS rules) ... */
+    flex: none;
+  }
+
+  /* ... (existing CSS rules) ... */
+
+/* Add the dashed line style */
+.dashedLine {
+    position: relative;
+    margin: 20px 0;
+  }
+  
+  .dashedLine::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    border-top: 2px dashed #007bff; /* Replace #007bff with your color theme */
+    transform: translateY(-50%);
+  }
+  
+  /* ... (existing CSS rules) ... */
+  
